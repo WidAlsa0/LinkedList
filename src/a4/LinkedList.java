@@ -151,10 +151,7 @@ public class LinkedList<T> {
             int b = -1;
             if (a < size) {
                 if ((get(i).equals(get(a))) && (a != i)) {
-                    b = a;
-                    if ((b > -1)) {
-                        return true;
-                    }
+                    return true;
                 }
                 a++;
             }

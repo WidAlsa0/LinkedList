@@ -24,8 +24,7 @@ public class Main {
         list3.add(1);
 
         LinkedList list4 = new LinkedList<Integer>();
-        list4.add(5);
-        list4.add(6);
+
 
 
 

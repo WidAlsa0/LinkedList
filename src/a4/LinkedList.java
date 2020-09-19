@@ -188,12 +188,17 @@ public class LinkedList<T> {
                 list2.removeAtIndex(0);
                 i++;
             }
-        } else {
+        } else if (size > list2.size && !(list2.isEmpty())) {
             int a = 0;
             for (int i=0; i< list2.size + 1 ; i++) {
                 add(i+1, list2.get(a));
                 i++;
                 a++;
+            }
+        } else if (list2.isEmpty()) {
+            for (int i=0; i < size; i++) {
+                i++;
+                i--;
             }
         }
     }

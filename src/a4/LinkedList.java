@@ -189,10 +189,10 @@ public class LinkedList<T> {
                 i++;
             }
         } else {
-            int a =0;
-            for (int i=0; i< list2.size ; i++) {
-                add(a + 1, list2.get(i));
-                a++;
+            int a = 0;
+            for (int i=0; i< list2.size + 1 ; i++) {
+                add(i+1, list2.get(a));
+                i++;
                 a++;
             }
         }

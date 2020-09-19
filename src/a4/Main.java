@@ -8,8 +8,8 @@ public class Main {
         list.add(1);
         list.add(2);
         list.add(3);
-        list.add(1);
-        list.add(2);
+        list.add(4);
+
 
         LinkedList list2 = new LinkedList<Integer>();
         list2.add(5);
@@ -24,11 +24,9 @@ public class Main {
         list3.add(1);
 
         LinkedList list4 = new LinkedList<Integer>();
-        list4.add(1);
-        list4.add(2);
-        list4.add(3);
-        list4.add(3);
-        list4.add(4);
+        list4.add(5);
+        list4.add(6);
+
 
 
 //        list.removeAtIndex(0);
@@ -48,7 +46,7 @@ public class Main {
 //        System.out.println(list.toString());
 
         list.merge(list4);
-//        System.out.println(list.toString());
+        System.out.println(list.toString());
 
 //        list4.containsCycle();
 

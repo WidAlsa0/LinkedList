@@ -43,6 +43,9 @@ public class LinkedList<T> {
      * @return true if the lists have the same elements in the same order, false otherwise
      */
     public boolean isEqual(LinkedList list2) {
+        if (!(size == list2.size)) {
+            return false;
+        }
         for (int i=0; i< list2.size; i++) {
             if (!list2.get(i).equals(get(i))) {
                 return false;
@@ -153,7 +156,7 @@ public class LinkedList<T> {
                 a++;
             }
             if (b > -1) {
-                if (Math.abs(a-i) == size) {
+                if (Math.abs(b-i) == size) {
                     return true;
                 }
             }
@@ -186,10 +189,11 @@ public class LinkedList<T> {
                 i++;
             }
         } else {
-            for (int i=0; i< list2.size + 2; i++) {
-                add(i+1, list2.get(0));
-                list2.removeAtIndex(0);
-                i++;
+            int a =0;
+            for (int i=0; i< list2.size ; i++) {
+                add(a + 1, list2.get(i));
+                a++;
+                a++;
             }
         }
     }

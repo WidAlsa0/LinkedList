@@ -20,6 +20,11 @@ public class LinkedList<T> {
      * @param i    - index of node to remove
      */
     public void removeAtIndex(int i) {
+        if (i > size) {
+            throw new IndexOutOfBoundsException("Invalid index");
+        } else {
+            remove(get(i));
+        }
     }
 
     /**
@@ -38,7 +43,12 @@ public class LinkedList<T> {
      * @return true if the lists have the same elements in the same order, false otherwise
      */
     public boolean isEqual(LinkedList list2) {
-        return false;
+        for (int i=0; i< list2.size; i++) {
+            if (!list2.get(i).equals(get(i))) {
+                return false;
+            }
+        }
+        return true;
     }
 
 
@@ -54,7 +64,12 @@ public class LinkedList<T> {
      */
 
     public boolean isSymmetrical() {
-        return false;
+        for (int i=0; i<size; i++) {
+            if (!get(i).equals(get(size-(i+1)))) {
+                return false;
+            }
+        }
+        return true;
     }
 
 
@@ -68,6 +83,17 @@ public class LinkedList<T> {
      * @param factor the amount to multiply the number of occurrences of each element by
      */
     public void multiply(int factor) {
+        int length = size;
+        if (isEmpty()) {
+            clear();
+        } else {
+            for (int i=0; i< length; i++) {
+                for (int a=0; a<factor; a++) {
+                    add(get(0));
+                }
+                removeAtIndex(0);
+            }
+        }
     }
 
     /**
@@ -76,7 +102,17 @@ public class LinkedList<T> {
      *     list after removeRepeats: 5 -> 6 -> 7 -> 8 -> 9
      *
      */
-    public void removeRepeats() { }
+    public void removeRepeats() {
+        for (int i =0; i<size; i++) {
+            int a =1;
+            while (a < size) {
+                if (get(i).equals(get(a)) && !(a == i)) {
+                    remove(get(i));
+                }
+                a++;
+            }
+        }
+    }
 
 
     /**
@@ -86,7 +122,12 @@ public class LinkedList<T> {
      *    list after reverse: 7 -> 8 -> 9 -> 10
      *
      */
-    public void reverse() { }
+    public void reverse() {
+        for (int i =0; i<size; i++) {
+            add((size - (i+1)));
+            removeAtIndex(size - 1);
+        }
+    }
 
     /**
      * Return true if the list contains a cycle, false otherwise
@@ -102,6 +143,21 @@ public class LinkedList<T> {
      * @return true if the list contains a cycle, false otherwise
      */
     public boolean containsCycle() {
+        for (int i=0; i<size; i++) {
+            int a = 0;
+            int b = -1;
+            while (a < size) {
+                if (get(i).equals(get(a)) && !(a == i)) {
+                    b = a;
+                }
+                a++;
+            }
+            if (b > -1) {
+                if (Math.abs(a-i) == size) {
+                    return true;
+                }
+            }
+        }
         return false;
     }
 
@@ -123,6 +179,19 @@ public class LinkedList<T> {
      * @param list2
      */
     public void merge(LinkedList list2) {
+        if (size == list2.size) {
+            for (int i=0; i<size ; i++) {
+                add(i+1, list2.get(0));
+                list2.removeAtIndex(0);
+                i++;
+            }
+        } else {
+            for (int i=0; i< list2.size + 2; i++) {
+                add(i+1, list2.get(0));
+                list2.removeAtIndex(0);
+                i++;
+            }
+        }
     }
 
 

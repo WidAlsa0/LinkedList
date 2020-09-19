@@ -149,16 +149,14 @@ public class LinkedList<T> {
         for (int i=0; i<size; i++) {
             int a = 0;
             int b = -1;
-            while (a < size) {
-                if (get(i).equals(get(a)) && !(a == i)) {
+            if (a < size) {
+                if ((get(i).equals(get(a))) && (a != i)) {
                     b = a;
+                    if ((b > -1) && (i == Math.abs(b-i))) {
+                        return true;
+                    }
                 }
                 a++;
-            }
-            if (b > -1) {
-                if (Math.abs(b-i) == size) {
-                    return true;
-                }
             }
         }
         return false;

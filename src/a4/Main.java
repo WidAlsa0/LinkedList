@@ -9,6 +9,8 @@ public class Main {
         list.add(2);
         list.add(3);
         list.add(4);
+        list.add(5);
+        list.add(6);
 
 
         LinkedList list2 = new LinkedList<Integer>();
@@ -44,10 +46,10 @@ public class Main {
 //        list.reverse();
 //        System.out.println(list.toString());
 
-        list.merge(list4);
-        System.out.println(list.toString());
+//        list.merge(list4);
+//        System.out.println(list.toString());
 
-//        list4.containsCycle();
+        System.out.println(list.containsCycle());
 
 
 

@@ -146,6 +146,9 @@ public class LinkedList<T> {
      * @return true if the list contains a cycle, false otherwise
      */
     public boolean containsCycle() {
+        if (isEmpty()) {
+            return true;
+        }
         for (int i=0; i<size; i++) {
             int a = 0;
             int b = -1;

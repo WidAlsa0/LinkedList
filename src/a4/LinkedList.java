@@ -146,21 +146,27 @@ public class LinkedList<T> {
      * @return true if the list contains a cycle, false otherwise
      */
     public boolean containsCycle() {
-        if (isEmpty()) {
+        if (tail.hasNext()) {
             return true;
+        } else {
+            return false;
         }
-        for (int i=0; i<size; i++) {
-            int a = 0;
-            int b = -1;
-            if (a < size) {
-                if ((get(i).equals(get(a))) && (a != i)) {
-                    return true;
-                }
-                a++;
-            }
-        }
-        return false;
     }
+//        if (isEmpty()) {
+//            return true;
+//        }
+//        for (int i=0; i<size; i++) {
+//            int a = 0;
+//            int b = -1;
+//            if (a < size) {
+//                if ((get(i).equals(get(a))) && (a != i)) {
+//                    return true;
+//                }
+//                a++;
+//            }
+//        }
+//        return false;
+//    }
 
     /**
      * Merge the given linked list into the current list. The 2 lists will always be
